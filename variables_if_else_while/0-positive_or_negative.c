@@ -3,7 +3,8 @@
 #include <time.h>
 
 /**
- * main - assigns a random number to n and prints if it's positive, zero, or negative
+ * main - assigns a random number to n and prints if it's positive,
+ * zero, or negative
  *
  * Return: 0
  */
