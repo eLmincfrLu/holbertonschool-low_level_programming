@@ -2,7 +2,7 @@
 
 /**
  * _putchar - writes the character c to stdout
- * @c: The character to print
+ * @c: character to print
  *
  * Return: 1 on success
  */
@@ -26,7 +26,7 @@ void print_alphabet(void)
 /**
  * main - check the code
  *
- * Return: Always 0.
+ * Return: Always 0
  */
 int main(void)
 {
