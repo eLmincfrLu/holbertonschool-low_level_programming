@@ -22,6 +22,6 @@ int main(void)
 		if (a != 100)
 			printf(" ");
 	}
-	printf('\n');
+	printf("\n");
 	return (0);
 }
