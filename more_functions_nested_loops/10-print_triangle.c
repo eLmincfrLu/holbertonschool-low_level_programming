@@ -8,7 +8,6 @@ void print_triangle(int size)
 {
 	int a, b;
 	int ct;
-	int cy;
 
 	if (size > 0)
 	{
