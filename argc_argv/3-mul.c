@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * main - multiplies two numbers
+ * @argc: number of arguments
+ * @argv: array of arguments
+ *
+ * Return: 0 if success, 1 if error
+ */
+int main(int argc, char *argv[])
+{
+	int i;
+	int result;
+
+	if (argc < 3)
+	{
+		printf("Error\n");
+
+		return (1);
+	}
+	result = argv[argc - 2] * argv[argc - 1]
+	printf("%d\n", result);
+}
