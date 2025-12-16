@@ -13,7 +13,7 @@ int _is_prime(int n, int divisor)
 		return (0);
 	if (n % divisor == 0)
 		return (0);
-	if ((divisor > n / 2))
+	if ((divisor * divisor) > n)
 		return (1);
 	return (_is_prime(n, divisor + 1));
 }
