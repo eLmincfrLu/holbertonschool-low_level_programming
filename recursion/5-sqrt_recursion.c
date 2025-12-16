@@ -11,7 +11,7 @@ int sqrt_help(int n, int guess)
 {
 	if ((guess * guess) == n)
 		return (guess);
-	if ((guess * guess) > n);
+	if ((guess * guess) > n)
 		return (-1);
 	return (sqrt_help(n, guess + 1));
 }
