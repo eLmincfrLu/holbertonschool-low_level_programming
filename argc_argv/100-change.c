@@ -7,7 +7,7 @@ int main(int argc, char *argv[])
 	int coins = 0;
 	int a;
 
-	if (argc < 2)
+	if (argc < 1)
 	{
 		printf("Error\n");
 		return (1);
