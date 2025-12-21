@@ -23,7 +23,7 @@ int main(int argc, char *argv[])
 	{
 		a = cents / 25;
 		cents = cents - (a * 25);
-		coins += a
+		coins += a;
 	}
 	if (cents >= 10)
 	{
@@ -35,19 +35,19 @@ int main(int argc, char *argv[])
 	{
 		a = cents / 5;
 		cents = cents - (a * 5);
-		coins += a
+		coins += a;
 	}
 	if (cents >= 2)
 	{
 		a = cents / 2;
 		cents = cents - (a * 2);
-		coins += a
+		coins += a;
 	}
 	if (cents >= 1)
 	{
 		a = cents / 1;
 		cents = cents - (a * 1);
-		coins += a
+		coins += a;
 	}
 	printf("%d", a);
 	return (0);
