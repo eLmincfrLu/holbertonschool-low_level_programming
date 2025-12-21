@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
 	if (cents < 0)
 	{
 		printf("%d\n", 0);
+		return (0);
 	}
 	if (cents >= 25)
 	{
@@ -49,6 +50,6 @@ int main(int argc, char *argv[])
 		cents = cents - (a * 1);
 		coins += a;
 	}
-	printf("%d", coins);
+	printf("%d\n", coins);
 	return (0);
 }
