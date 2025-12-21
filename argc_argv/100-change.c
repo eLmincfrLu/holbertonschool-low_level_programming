@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * main - prints the minimum number of coins to make change
+ * @argc: argument count
+ * @argv: argument vector
+ *
+ * Return: 0 on success, 1 on error
+ */
 int main(int argc, char *argv[])
 {
 	int cents;
@@ -20,36 +27,43 @@ int main(int argc, char *argv[])
 		printf("%d\n", 0);
 		return (0);
 	}
+
 	if (cents >= 25)
 	{
 		a = cents / 25;
 		cents = cents - (a * 25);
 		coins += a;
 	}
+
 	if (cents >= 10)
 	{
 		a = cents / 10;
 		cents = cents - (a * 10);
 		coins += a;
 	}
+
 	if (cents >= 5)
 	{
 		a = cents / 5;
 		cents = cents - (a * 5);
 		coins += a;
 	}
+
 	if (cents >= 2)
 	{
 		a = cents / 2;
 		cents = cents - (a * 2);
 		coins += a;
 	}
+
 	if (cents >= 1)
 	{
 		a = cents / 1;
 		cents = cents - (a * 1);
 		coins += a;
 	}
+
 	printf("%d\n", coins);
+
 	return (0);
 }
