@@ -14,7 +14,7 @@ void *malloc_checked(unsigned int b)
 
     ptr = malloc(b);
     if (ptr == NULL)
-        exit(98);  // terminate with status 98 if allocation fails
+        exit(98);
 
     return (ptr);
 }
