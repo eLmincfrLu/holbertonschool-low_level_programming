@@ -1,6 +1,14 @@
 #include "dog.h"
-#include <string.h>
 #include <stdlib.h>
+
+/* helper function to calculate string length */
+int string_len(char *s)
+{
+int i = 0;
+while (s[i] != '\0')
+i++;
+return (i);
+}
 
 /**
  * new_dog - creates a new dog
@@ -14,7 +22,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 {
 dog_t *d;
 char *name_copy, *owner_copy;
-size_t len;
+int len;
 
 d = malloc(sizeof(dog_t));
 if (d == NULL)
@@ -23,14 +31,15 @@ return (NULL);
 /* allocate and copy name */
 if (name != NULL)
 {
-len = strlen(name) + 1;
+len = string_len(name) + 1;
 name_copy = malloc(len);
 if (name_copy == NULL)
 {
 free(d);
 return (NULL);
 }
-strcpy(name_copy, name);
+for (int i = 0; i < len; i++)
+name_copy[i] = name[i];
 d->name = name_copy;
 }
 else
@@ -39,7 +48,7 @@ d->name = NULL;
 /* allocate and copy owner */
 if (owner != NULL)
 {
-len = strlen(owner) + 1;
+len = string_len(owner) + 1;
 owner_copy = malloc(len);
 if (owner_copy == NULL)
 {
@@ -47,7 +56,8 @@ free(d->name);
 free(d);
 return (NULL);
 }
-strcpy(owner_copy, owner);
+for (int i = 0; i < len; i++)
+owner_copy[i] = owner[i];
 d->owner = owner_copy;
 }
 else
