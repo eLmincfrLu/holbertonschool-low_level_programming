@@ -16,6 +16,4 @@ float age;
 char *owner;
 } dog_t;
 
-void print_dog(dog_t *d);
-
 #endif
