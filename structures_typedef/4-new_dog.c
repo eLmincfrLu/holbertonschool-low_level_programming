@@ -1,7 +1,12 @@
 #include <stdlib.h> /* malloc, free, NULL */
 #include "dog.h"
 
-/* helper function: calculates string length */
+/**
+ * string_len - calculates the length of a string
+ * @s: the string to measure
+ *
+ * Return: the length of the string
+ */
 int string_len(char *s)
 {
 int i = 0;
@@ -11,7 +16,12 @@ i++;
 return (i);
 }
 
-/* helper function: allocates and copies string */
+/**
+ * copy_string - allocates memory and copies a string
+ * @s: the string to copy
+ *
+ * Return: pointer to the copied string, or NULL if it fails
+ */
 char *copy_string(char *s)
 {
 int len, i;
