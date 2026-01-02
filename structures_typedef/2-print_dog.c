@@ -8,7 +8,7 @@
  * Description: if a member is NULL, prints (nil) instead
  *              if d is NULL, prints nothing
  */
-void print_dog(struct dog *d);
+void print_dog(dog_t dog *d);
 {
 	if (d == NULL)
 		return;
