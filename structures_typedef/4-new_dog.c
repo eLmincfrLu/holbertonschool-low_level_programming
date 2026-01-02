@@ -1,3 +1,4 @@
+#include <stdlib.h> /* malloc, free, NULL */
 #include "dog.h"
 
 /* helper function: calculates string length */
