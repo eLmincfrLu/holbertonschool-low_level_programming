@@ -6,7 +6,8 @@
  * print_all - Verilmiş format üzrə istənilən tipdə arqumentləri çap edir
  * @format: format string (c, i, f, s)
  *
- * Description: Separator ', ' istifadə olunur, string NULL olarsa '(nil)' çap edilir.
+ * Description: Separator ', ' istifadə olunur,
+ * string NULL olarsa '(nil)' çap edilir.
  */
 void print_all(const char * const format, ...)
 {
