@@ -15,12 +15,12 @@ void print_all(const char * const format, ...)
 
 	va_start(args, format);
 
-	if (format != NULL)  /* 1-ci if */
+	if (format != NULL)	/* 1-ci if */
 	{
-		while (format[i] != '\0')  /* 1-ci while */
+		while (format[i] != '\0')	/* 1-ci while */
 		{
 			if (format[i] == 'c' || format[i] == 'i' ||
-			    format[i] == 'f' || format[i] == 's')  /* 2-ci if */
+				format[i] == 'f' || format[i] == 's')	/* 2-ci if */
 			{
 				switch (format[i])
 				{
