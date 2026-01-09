@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * print_all - Verilmiş format üzrə istənilən tipdə arqumentləri çap edir
+ * print_all - Verilmiştənilən tipdə arqumentləri çap edir
  * @format: format string (c, i, f, s)
  *
  * Description: Separator ', ' istifadə olunur,
