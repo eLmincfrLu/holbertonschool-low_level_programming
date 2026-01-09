@@ -30,10 +30,7 @@ void print_all(const char * const format, ...)
 		if (format[i] == 's')
 		{
 			str = va_arg(args, char *);
-			if (str == NULL)
-				printf("%s(nil)", sep);
-			else
-				printf("%s%s", sep, str);
+			printf("%s%s", sep, str ? str : "(nil)");
 		}
 		sep = ", ";
 		i++;
