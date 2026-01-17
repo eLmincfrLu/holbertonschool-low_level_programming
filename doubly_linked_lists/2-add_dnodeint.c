@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -5,7 +6,7 @@
  * @head: pointer to the head of the list
  * @n: value to store in the new node
  *
- * Return: address of the new element, or NULL on failure
+ * Return: address of the new element, or NULL if it failed
  */
 dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
