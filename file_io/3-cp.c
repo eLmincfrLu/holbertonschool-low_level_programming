@@ -5,7 +5,7 @@
 
 /**
  * close_fd - closes a file descriptor
- * @fd: file descriptor to close
+ * @fd: file descriptor
  */
 void close_fd(int fd)
 {
@@ -13,6 +13,41 @@ void close_fd(int fd)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
+	}
+}
+
+/**
+ * copy_file - copies content from one file descriptor to another
+ * @fd_from: source file descriptor
+ * @fd_to: destination file descriptor
+ * @from: source file name
+ * @to: destination file name
+ */
+void copy_file(int fd_from, int fd_to, char *from, char *to)
+{
+	ssize_t rd, wr;
+	char buffer[1024];
+
+	while ((rd = read(fd_from, buffer, 1024)) > 0)
+	{
+		wr = write(fd_to, buffer, rd);
+		if (wr == -1 || wr != rd)
+		{
+			dprintf(STDERR_FILENO,
+				"Error: Can't write to %s\n", to);
+			close_fd(fd_from);
+			close_fd(fd_to);
+			exit(99);
+		}
+	}
+
+	if (rd == -1)
+	{
+		dprintf(STDERR_FILENO,
+			"Error: Can't read from file %s\n", from);
+		close_fd(fd_from);
+		close_fd(fd_to);
+		exit(98);
 	}
 }
 
@@ -26,8 +61,6 @@ void close_fd(int fd)
 int main(int ac, char **av)
 {
 	int fd_from, fd_to;
-	ssize_t rd, wr;
-	char buffer[1024];
 
 	if (ac != 3)
 	{
@@ -52,27 +85,7 @@ int main(int ac, char **av)
 		exit(99);
 	}
 
-	while ((rd = read(fd_from, buffer, 1024)) > 0)
-	{
-		wr = write(fd_to, buffer, rd);
-		if (wr == -1 || wr != rd)
-		{
-			dprintf(STDERR_FILENO,
-				"Error: Can't write to %s\n", av[2]);
-			close_fd(fd_from);
-			close_fd(fd_to);
-			exit(99);
-		}
-	}
-
-	if (rd == -1)
-	{
-		dprintf(STDERR_FILENO,
-			"Error: Can't read from file %s\n", av[1]);
-		close_fd(fd_from);
-		close_fd(fd_to);
-		exit(98);
-	}
+	copy_file(fd_from, fd_to, av[1], av[2]);
 
 	close_fd(fd_from);
 	close_fd(fd_to);
